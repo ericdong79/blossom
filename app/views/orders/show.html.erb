@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer name:</strong>
+  <%= @order.customer_name %>
+</p>
+
+<p>
+  <strong>Orderer name:</strong>
+  <%= @order.orderer_name %>
+</p>
+
+<p>
+  <strong>Orderer phone:</strong>
+  <%= @order.orderer_phone %>
+</p>
+
+<p>
+  <strong>Planned delivery datetime:</strong>
+  <%= @order.planned_delivery_datetime %>
+</p>
+
+<p>
+  <strong>Receiver name:</strong>
+  <%= @order.receiver_name %>
+</p>
+
+<p>
+  <strong>Receiver phone:</strong>
+  <%= @order.receiver_phone %>
+</p>
+
+<p>
+  <strong>Receiver address:</strong>
+  <%= @order.receiver_address %>
+</p>
+
+<p>
+  <strong>Order status:</strong>
+  <%= @order.order_status %>
+</p>
+
+<p>
+  <strong>Product name:</strong>
+  <%= @order.product_name %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @order.remark %>
+</p>
+
+<p>
+  <strong>Handler:</strong>
+  <%= @order.handler %>
+</p>
+
+<p>
+  <strong>Money received:</strong>
+  <%= @order.money_received %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
