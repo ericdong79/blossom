@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blossom</title>
+  <title>Blossom·绽放之后勤管理</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body >
+    <div class="header row">
+      <div class="column">
+        <h1>Ms Blooming</h1>
+        <p>裝點每個多彩瞬間</p>
+      </div>      
+    </div>  
+  
+  <div class='container main-body'>
 
-<%= yield %>
+    <%= yield %>
+    <div class='footer row' >
+      <div class="column">
+        Ms Blooming工作室版权所有 · Copyright 2015-2016  
+      </div>
+      
+    </div>
+  </div>
 
 </body>
+<%= yield :page_script %>
 </html>

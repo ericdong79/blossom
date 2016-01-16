@@ -1,64 +1,64 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Customer name:</strong>
+  <strong>客户姓名:</strong>
   <%= @order.customer_name %>
 </p>
 
 <p>
-  <strong>Orderer name:</strong>
+  <strong>订花人姓名:</strong>
   <%= @order.orderer_name %>
 </p>
 
 <p>
-  <strong>Orderer phone:</strong>
+  <strong>订花人电话:</strong>
   <%= @order.orderer_phone %>
 </p>
 
 <p>
-  <strong>Planned delivery datetime:</strong>
+  <strong>计划送花时间:</strong>
   <%= @order.planned_delivery_datetime %>
 </p>
 
 <p>
-  <strong>Receiver name:</strong>
+  <strong>收花人姓名:</strong>
   <%= @order.receiver_name %>
 </p>
 
 <p>
-  <strong>Receiver phone:</strong>
+  <strong>收花人电话:</strong>
   <%= @order.receiver_phone %>
 </p>
 
 <p>
-  <strong>Receiver address:</strong>
+  <strong>收花人地址:</strong>
   <%= @order.receiver_address %>
 </p>
 
 <p>
-  <strong>Order status:</strong>
+  <strong>订单状态:</strong>
   <%= @order.order_status %>
 </p>
 
 <p>
-  <strong>Product name:</strong>
+  <strong>产品名:</strong>
   <%= @order.product_name %>
 </p>
 
 <p>
-  <strong>Remark:</strong>
+  <strong>备注:</strong>
   <%= @order.remark %>
 </p>
 
 <p>
-  <strong>Handler:</strong>
+  <strong>经手人:</strong>
   <%= @order.handler %>
 </p>
 
 <p>
-  <strong>Money received:</strong>
+  <strong>订单已收金额:</strong>
   <%= @order.money_received %>
 </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to '修改', edit_order_path(@order) %> |
+<%= link_to '返回', orders_path %>

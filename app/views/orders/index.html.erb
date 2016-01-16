@@ -1,30 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Orders</h1>
+<h1>订单列表</h1>
 
-<table>
+<table id="orders_table">
   <thead>
     <tr>
-      <th>Customer name</th>
-      <th>Orderer name</th>
-      <th>Orderer phone</th>
-      <th>Planned delivery datetime</th>
-      <th>Receiver name</th>
-      <th>Receiver phone</th>
-      <th>Receiver address</th>
-      <th>Order status</th>
-      <th>Product name</th>
-      <th>Remark</th>
-      <th>Handler</th>
-      <th>Money received</th>
-      <th colspan="3"></th>
+      <th>下单时间</th>
+      <th>订花人</th>
+      <th>订花人姓名</th>
+      <th>计划送花时间</th>
+      <th>收花人</th>
+      <th>收花人电话</th>
+      <th>收花人地址</th>
+      <th>订单状态</th>
+      <th>产品名称</th>
+      <th>经手人</th>
+      <th>订单已收金额</th>
+      <th>订单操作</th>
     </tr>
   </thead>
 
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.customer_name %></td>
+        <td><%= order.created_at %></td>
         <td><%= order.orderer_name %></td>
         <td><%= order.orderer_phone %></td>
         <td><%= order.planned_delivery_datetime %></td>
@@ -33,12 +32,11 @@
         <td><%= order.receiver_address %></td>
         <td><%= order.order_status %></td>
         <td><%= order.product_name %></td>
-        <td><%= order.remark %></td>
         <td><%= order.handler %></td>
         <td><%= order.money_received %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       <td><%= link_to '显示详情', order %>
+       <%= link_to '修改', edit_order_path(order) %>
+       <%= link_to '删除', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -46,4 +44,40 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to '新建订单', new_order_path %>
+
+<% content_for :page_script do %>
+  <script>
+    $(document).ready(function(){
+      $('#orders_table').DataTable({
+        searching:true,
+        paging:true,
+        language: {
+            "sProcessing": "处理中...",
+            "sLengthMenu": "显示 _MENU_ 项结果",
+            "sZeroRecords": "没有匹配结果",
+            "sInfo": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+            "sInfoEmpty": "显示第 0 至 0 项结果，共 0 项",
+            "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+            "sInfoPostFix": "",
+            "sSearch": "搜索:",
+            "sUrl": "",
+            "sEmptyTable": "表中数据为空",
+            "sLoadingRecords": "载入中...",
+            "sInfoThousands": ",",
+            "oPaginate": {
+                "sFirst": "首页",
+                "sPrevious": "上页",
+                "sNext": "下页",
+                "sLast": "末页"
+            },
+            "oAria": {
+                "sSortAscending": ": 以升序排列此列",
+                "sSortDescending": ": 以降序排列此列"
+            }
+        },
+        responsive:true
+      });
+    });
+  </script>
+<% end %>

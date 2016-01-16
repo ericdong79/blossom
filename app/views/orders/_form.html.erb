@@ -2,21 +2,21 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :customer_name %>
-    <%= f.input :orderer_name %>
-    <%= f.input :orderer_phone %>
-    <%= f.input :planned_delivery_datetime %>
-    <%= f.input :receiver_name %>
-    <%= f.input :receiver_phone %>
-    <%= f.input :receiver_address %>
-    <%= f.input :order_status %>
-    <%= f.input :product_name %>
-    <%= f.input :remark %>
-    <%= f.input :handler %>
-    <%= f.input :money_received %>
+    <%= f.input :customer_name , label: '客户姓名'%>
+    <%= f.input :orderer_name , label: '订花人'%>
+    <%= f.input :orderer_phone , label: '订花人电话'%>
+    <%= f.input :planned_delivery_datetime , label: '预定送花时间'%>
+    <%= f.input :receiver_name , label: '收花人'%>
+    <%= f.input :receiver_phone, label: '收花人电话' %>
+    <%= f.input :receiver_address , label: '收花人地址'%>
+    <%= f.input :order_status , label: '订单状态'%>
+    <%= f.input :product_name , label: '产品名'%>
+    <%= f.input :remark , label: '备注'%>
+    <%= f.input :handler , label: '经手人'%>
+    <%= f.input :money_received , label: '订单已收金额'%>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit  , '下单'%>
   </div>
 <% end %>
