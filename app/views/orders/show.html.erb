@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
-
 <p>
-  <strong>客户姓名:</strong>
-  <%= @order.customer_name %>
+  <strong>下单日期:</strong>
+  <%= @order.created_at.in_time_zone.strftime '%y-%m-%d %H:%M' %>
 </p>
 
 <p>
@@ -17,7 +16,7 @@
 
 <p>
   <strong>计划送花时间:</strong>
-  <%= @order.planned_delivery_datetime %>
+  <%= @order.planned_delivery_datetime.in_time_zone.strftime '%y-%m-%d %H:%I' %>
 </p>
 
 <p>

@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1>订单列表</h1>
-
+<%= link_to '新建订单', new_order_path, :class =>'button'%>
 <table id="orders_table">
   <thead>
     <tr>
-      <th>下单时间</th>
+      <th>下单日期</th>
       <th>订花人</th>
-      <th>订花人姓名</th>
-      <th>计划送花时间</th>
+      <th>Tel</th>
+      <th>送花时间</th>
       <th>收花人</th>
-      <th>收花人电话</th>
+      <th>Tel</th>
       <th>收花人地址</th>
       <th>订单状态</th>
       <th>产品名称</th>
@@ -23,10 +23,10 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.created_at %></td>
+        <td><%= order.created_at.in_time_zone.strftime '%y.%m.%d' %></td>
         <td><%= order.orderer_name %></td>
         <td><%= order.orderer_phone %></td>
-        <td><%= order.planned_delivery_datetime %></td>
+        <td><%= order.planned_delivery_datetime.in_time_zone.strftime '%y.%m.%d %p' %></td>
         <td><%= order.receiver_name %></td>
         <td><%= order.receiver_phone %></td>
         <td><%= order.receiver_address %></td>
@@ -44,7 +44,7 @@
 
 <br>
 
-<%= link_to '新建订单', new_order_path %>
+
 
 <% content_for :page_script do %>
   <script>

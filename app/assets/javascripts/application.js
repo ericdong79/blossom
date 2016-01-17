@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require datatables.min
+//= require jquery.datetimepicker.full
 //= require_tree .
