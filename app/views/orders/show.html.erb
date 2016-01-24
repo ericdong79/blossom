@@ -16,7 +16,7 @@
 
 <p>
   <strong>计划送花时间:</strong>
-  <%= @order.planned_delivery_datetime.in_time_zone.strftime '%y-%m-%d %H:%I' %>
+  <%= ()@order.planned_delivery_datetime.nil?) ? 'TBD' : (@order.planned_delivery_datetime.in_time_zone.strftime '%y-%m-%d %H:%I') %>
 </p>
 
 <p>

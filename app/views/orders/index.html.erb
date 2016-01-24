@@ -25,10 +25,10 @@
       <tr>
         <td><%= order.created_at.in_time_zone.strftime '%y.%m.%d' %></td>
         <td><%= order.orderer_name %></td>
-        <td><%= order.orderer_phone %></td>
-        <td><%= order.planned_delivery_datetime.in_time_zone.strftime '%y.%m.%d %p' %></td>
+        <td style="text-align:center;"><a class="phone-label" href="void:javascript(0);" title="<%= order.orderer_phone %>"><i class="fa fa-phone" ></i></a></td>
+        <td><%= (order.planned_delivery_datetime.nil?)? 'TBD' : (order.planned_delivery_datetime.in_time_zone.strftime '%y.%m.%d %p') %></td>
         <td><%= order.receiver_name %></td>
-        <td><%= order.receiver_phone %></td>
+        <td  style="text-align:center;"><a class="phone-label" href="void:javascript(0);" title="<%= order.receiver_phone %>"><i class="fa fa-phone btn" ></i></a></td>
         <td><%= order.receiver_address %></td>
         <td><%= order.order_status %></td>
         <td><%= order.product_name %></td>
@@ -79,5 +79,9 @@
         responsive:true
       });
     });
+    $('.phone-label').tooltip()
+    // $('.phone-label').on('hover',function(e){
+    //   $(e.target).tooltip('show');
+    // });
   </script>
 <% end %>
